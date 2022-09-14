@@ -16,12 +16,30 @@ import { createTheme } from '@mui/material/styles';
 import {ThemeProvider} from '@mui/material/styles';
 
 import logo from "./fragile_logo.png"
+import { textTransform } from '@mui/system';
 
-const pages = ['Leaderboard', 'Profile', 'Campaigns'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Leaderboard', 'Profile'];
+
+
+
+const headerLinksTheme = createTheme({
+  typography: {
+    fontFamily: [
+      '"Helvetica Neue"',
+    ].join(','),
+    fontSize: '1rem',
+  },
+  },
+);
+
 
 
 const themeSecondaryButton = createTheme({
+  typography: {
+    fontFamily: [
+      '"Helvetica Neue"',
+    ].join(','),
+  },
   components: {
     // Name of the component
     MuiButton: {
@@ -32,7 +50,15 @@ const themeSecondaryButton = createTheme({
           fontSize: '1rem',
           backgroundColor:'#FCE7EC',
           color: '#E73560',
-          borderRadius:'20px'
+          borderRadius:'50px',
+          textTransform: 'none',
+          padding:'14px 24px',
+          fontWeight: 700,
+          fontSize:'19px',
+          '&:hover': {
+            backgroundColor: '#FAD5DE',
+            color: 'E73560',
+        },
         },
       },
     },
@@ -40,6 +66,11 @@ const themeSecondaryButton = createTheme({
 });
 
 const themePrimaryButton = createTheme({
+  typography: {
+    fontFamily: [
+      '"Helvetica Neue"',
+    ].join(','),
+  },
   components: {
     // Name of the component
     MuiButton: {
@@ -49,7 +80,16 @@ const themePrimaryButton = createTheme({
           // Some CSS
           fontSize: '1rem',
           backgroundColor:'black',
-          borderRadius:'20px'
+          borderRadius:'50px',
+          textTransform: 'none',
+          padding:'14px 24px',
+          fontWeight: 700,
+          fontSize:'19px',
+          color:'white',
+          '&:hover': {
+            backgroundColor: '#383838',
+            color: 'white',
+        },
         },
       },
     },
@@ -79,10 +119,11 @@ const Header = () => {
     <AppBar position="static" elevation={0} sx={{
         background: 'white',
         color: 'black',
+        padding: '20px 10px',
       }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logo} width={'80px'} height={'80px'} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} ></img>
+          <img src={logo} width={'90px'} height={'90px'} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} ></img>
          
           
 
@@ -114,44 +155,30 @@ const Header = () => {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
-                // text:{
-                //   primary: "#E73560"
-                // }
+               
                
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"  >{page}</Typography>
+                <MenuItem key={page} onClick={handleCloseNavMenu}  >
+                
+                  <Typography textAlign="center" >{page}</Typography>
+                 
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
+                sx={{ my: 4, mr:1, ml:1, color: '#777E88',fontWeight: 700, display: 'block', textTransform: 'none', fontSize: '19px', fontFamily: 'Helvetica Neue', '&:hover': {
+                  backgroundColor: 'transparent',
+                  color: 'black',
+              },}}
               >
                 {page}
               </Button>
@@ -160,46 +187,19 @@ const Header = () => {
 
           <Box sx={{ mr: 2}}>
           <ThemeProvider theme={themeSecondaryButton}>
+        
                <Button>Create campaign</Button>
+             
           </ThemeProvider>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
           <ThemeProvider theme={themePrimaryButton}>
-          <Button size="large" color="error" variant="contained" sx="border-radius:20px">Connect wallet</Button>
+          <Button>Connect wallet</Button>
           </ThemeProvider>
           </Box>
 
           
-
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
+          
         
         </Toolbar>
       </Container>
