@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { createTheme } from '@mui/material/styles';
 import {ThemeProvider} from '@mui/material/styles';
 
-import logo from "./fragile_logo.png"
+import logo from "./fragile_logo.svg"
 import { textTransform } from '@mui/system';
 
 const pages = ['Leaderboard', 'Profile'];
@@ -123,7 +123,7 @@ const Header = () => {
       }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logo} width={'90px'} height={'90px'} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} ></img>
+          <img src={logo} width={'60px'} height={'60px'} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} ></img>
          
           
 
