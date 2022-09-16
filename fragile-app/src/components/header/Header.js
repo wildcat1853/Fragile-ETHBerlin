@@ -178,7 +178,10 @@ const Header = () => {
                 sx={{ my: 4, mr:1, ml:1, color: '#777E88',fontWeight: 700, display: 'block', textTransform: 'none', fontSize: '19px', fontFamily: 'Helvetica Neue', '&:hover': {
                   backgroundColor: 'transparent',
                   color: 'black',
-              },}}
+              },'&:focus': {
+                backgroundColor: 'transparent',
+                borderRadius:'50px'
+            },}}
               >
                 {page}
               </Button>
