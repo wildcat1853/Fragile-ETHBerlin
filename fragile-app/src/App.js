@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      {/* <Drop></Drop> */}
-      <UserProfile></UserProfile>
+      <Drop></Drop>
+      {/* <UserProfile></UserProfile> */}
     </div>
   );
 }
