@@ -9,6 +9,10 @@ const mainTheme = createTheme({
           // This is green.A700 as hex.
           main: '#E73560',
         },
+        grey: {
+          // This is green.A700 as hex.
+          main: '#D3DCE4',
+        },
       },
     typography: {
       fontFamily: [
@@ -53,7 +57,48 @@ const mainTheme = createTheme({
       button: {
         color: 'red'
       }
-    }
+    },
+    components: {
+      // Name of the component
+      MuiButton: {
+        variants: [
+          {
+            props: { variant: 'primary' },
+            style: {
+              fontSize: '1rem',
+              backgroundColor:'black',
+              borderRadius:'50px',
+              textTransform: 'none',
+              padding:'14px 24px',
+              fontWeight: 700,
+              fontSize:'19px',
+              color:'white',
+              '&:hover': {
+                backgroundColor: '#383838',
+                color: 'white',
+            },
+            },
+          },
+          {
+            props: { variant: 'secondary' },
+            style: {
+              fontSize: '1rem',
+          backgroundColor:'#FCE7EC',
+          color: '#E73560',
+          borderRadius:'50px',
+          textTransform: 'none',
+          padding:'14px 24px',
+          fontWeight: 700,
+          fontSize:'19px',
+          '&:hover': {
+            backgroundColor: '#FAD5DE',
+            color: 'E73560',
+        },
+            },
+          },
+        ],
+      },
+    },
   });
 
   export default mainTheme

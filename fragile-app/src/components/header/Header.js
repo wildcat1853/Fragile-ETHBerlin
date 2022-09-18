@@ -15,8 +15,9 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { createTheme } from '@mui/material/styles';
 import {ThemeProvider} from '@mui/material/styles';
 
-import logo from "./fragile_logo.svg"
+import logo from "./fragile_earth.png"
 import { textTransform } from '@mui/system';
+import mainTheme from '../../themes/main';
 
 const pages = ['Leaderboard', 'Profile'];
 
@@ -34,67 +35,6 @@ const headerLinksTheme = createTheme({
 
 
 
-const themeSecondaryButton = createTheme({
-  typography: {
-    fontFamily: [
-      '"Helvetica Neue"',
-    ].join(','),
-  },
-  components: {
-    // Name of the component
-    MuiButton: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          // Some CSS
-          fontSize: '1rem',
-          backgroundColor:'#FCE7EC',
-          color: '#E73560',
-          borderRadius:'50px',
-          textTransform: 'none',
-          padding:'14px 24px',
-          fontWeight: 700,
-          fontSize:'19px',
-          '&:hover': {
-            backgroundColor: '#FAD5DE',
-            color: 'E73560',
-        },
-        },
-      },
-    },
-  },
-});
-
-const themePrimaryButton = createTheme({
-  typography: {
-    fontFamily: [
-      '"Helvetica Neue"',
-    ].join(','),
-  },
-  components: {
-    // Name of the component
-    MuiButton: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          // Some CSS
-          fontSize: '1rem',
-          backgroundColor:'black',
-          borderRadius:'50px',
-          textTransform: 'none',
-          padding:'14px 24px',
-          fontWeight: 700,
-          fontSize:'19px',
-          color:'white',
-          '&:hover': {
-            backgroundColor: '#383838',
-            color: 'white',
-        },
-        },
-      },
-    },
-  },
-});
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -119,11 +59,11 @@ const Header = () => {
     <AppBar position="static" elevation={0} sx={{
         background: 'white',
         color: 'black',
-        padding: '20px 10px',
+        pt:3,
       }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logo} width={'60px'} height={'60px'} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} ></img>
+          <img src={logo} width={'60px'} height={'60px'} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,filter: 'drop-shadow(0px 4px 10px rgba(231, 53, 96, 0.5))' }} ></img>
          
           
 
@@ -189,15 +129,16 @@ const Header = () => {
           </Box>
 
           <Box sx={{ mr: 2}}>
-          <ThemeProvider theme={themeSecondaryButton}>
+          <ThemeProvider theme={mainTheme}>
         
-               <Button>Create campaign</Button>
+               <Button variant="secondary">Create campaign</Button>
              
           </ThemeProvider>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-          <ThemeProvider theme={themePrimaryButton}>
-          <Button>Connect wallet</Button>
+         
+          <ThemeProvider theme={mainTheme}>
+          <Button variant='primary'>Connect wallet</Button>
           </ThemeProvider>
           </Box>
 
