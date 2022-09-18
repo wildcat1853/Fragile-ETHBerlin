@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { MetaMaskProvider } from './components/metamask/context';
 
 const ZoraURI = 'https://api.zora.co/graphql'
 const client = new ApolloClient({
@@ -15,7 +16,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <MetaMaskProvider>
+        <App/>
+      </MetaMaskProvider>
     </ApolloProvider>
   </React.StrictMode>
 );

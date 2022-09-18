@@ -1,10 +1,11 @@
-import { React, Image } from 'react';
+import { React, useContext } from 'react';
 import { Box } from '@mui/system';
-
-
-
+import { MetaMaskContext } from '../metamask/context';
+import { NFT_PRICE } from '../../collection/data';
 
 const NFTBadge = ({url = ""}) => {
+  const {sendTx} = useContext(MetaMaskContext);
+
   return (
       <img 
         src={url} 
@@ -19,6 +20,7 @@ const NFTBadge = ({url = ""}) => {
             margin: '1em'
           }
         }
+        onClick={() => sendTx(NFT_PRICE)}
       />
   //   <Box sx={{width:'220px', height:'220px', backgroundColor:'#E9ECEF', borderRadius:40}}>
   //  </Box>

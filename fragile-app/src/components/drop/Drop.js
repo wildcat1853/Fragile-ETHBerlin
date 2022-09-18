@@ -7,7 +7,7 @@ import NFTBadge from '../nft-badge/NFTBadge';
 
 import { useQuery } from '@apollo/client';
 import query from '../../service/graphQuery';
-import utils from '../../service/utils';
+import * as  utils from '../../service/utils';
 
 const Drop = () => {
 
@@ -27,13 +27,11 @@ const Drop = () => {
         <DropInfo></DropInfo>
         <FundraiserInfo></FundraiserInfo>
       </Box>
-      
       <Box sx={{display:'block', marginTop:10,}}>
         {
           nodes.map(node => {
             const {tokenId, metadata} = node.token
             const imageUrl = utils.getIpfs(metadata.image) // Parse to correct ipdf format
-            debugger
             
             return <NFTBadge 
               key={tokenId}
