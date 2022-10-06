@@ -4,7 +4,6 @@ import Header from './components/header/Header';
 import Drop from './components/drop/Drop';
 import UserProfile from './components/user-profile/UserProfile';
 
-
 function App() {
   return (
     <div className="App">

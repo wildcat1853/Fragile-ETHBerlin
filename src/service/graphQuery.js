@@ -1,9 +1,8 @@
-import { gql } from '@apollo/client'
+import { gql } from '@apollo/client';
 import { contractAddr } from '../collection/data';
 
-const fetchNFTInfo = (contractAddress="", after="") => {
-
-    return gql`
+const fetchNFTInfo = (contractAddress = '', after = '') => {
+  return gql`
         query NFTInfo {
             tokens(
                 networks: {network: ETHEREUM}
@@ -22,9 +21,9 @@ const fetchNFTInfo = (contractAddress="", after="") => {
                 }
             }
         }
-        `
-}
+        `;
+};
 
 export default {
-    fetchNFTInfo: fetchNFTInfo
-}
+  fetchNFTInfo: fetchNFTInfo
+};
