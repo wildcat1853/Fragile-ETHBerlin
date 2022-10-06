@@ -1,8 +1,8 @@
-import { React, useContext } from 'react';
-import { MetaMaskContext } from '../metamask/context';
+// import { useContext } from 'react';
+// import { MetaMaskContext } from '../metamask/context';
 
 const NFTBadge = ({ url = '', handleModalClick }) => {
-  const { sendTx } = useContext(MetaMaskContext);
+  // const { sendTx } = useContext(MetaMaskContext);
 
   return (
     <img

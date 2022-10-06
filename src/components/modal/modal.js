@@ -9,11 +9,11 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const NFTModal = ({ open, handleClose, url }) => {
   const [purchaseActive, setPurchaseActive] = React.useState(false);
-  const [purchaseDone, setPurchaseDone] = React.useState(true);
+  // const [purchaseDone, setPurchaseDone] = React.useState(true);
 
-  const collectCoin = () => {
-    setPurchaseActive(false);
-  };
+  // const collectCoin = () => {
+  //   setPurchaseActive(false);
+  // };
 
   return (
     <Modal
@@ -65,8 +65,8 @@ const NFTModal = ({ open, handleClose, url }) => {
                   sx={{ mt: 2 }}
                   align="center"
                 >
-                  By purchasing NFT badge, you're donating to the organisation
-                  responsible for this campaign
+                  By purchasing NFT badge, you`&appos`re donating to the
+                  organisation responsible for this campaign
                 </Typography>
               </Box>
 

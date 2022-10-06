@@ -1,8 +1,6 @@
-import * as React from 'react';
 import { Box } from '@mui/system';
 
-import { Modal, Button, Typography } from '@mui/material';
-import NFTBadge from '../nft-badge/NFTBadge';
+import { Modal } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import mainTheme from '../../themes/main';
 

@@ -1,8 +1,5 @@
-import * as React from 'react';
 import { Container, Box } from '@mui/system';
 
-import NFTBadge from '../nft-badge/NFTBadge';
-import NFTModal from '../modal/modal';
 import UserInfo from '../user-info/UserInfo';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -11,7 +8,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import mainTheme from '../../themes/main';
 import { ThemeProvider } from '@emotion/react';
 
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(() => ({
   width: '220px',
   height: '220px',
   backgroundColor: '#E9ECEF',
@@ -22,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const UserProfile = () => {
   return (
-    <Container sx={{ marginTop: '30px', display: 'flex', marginTop: 14 }}>
+    <Container sx={{ marginTop: '30px', display: 'flex' }}>
       <ThemeProvider theme={mainTheme}>
         <UserInfo />
 

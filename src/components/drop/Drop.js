@@ -1,13 +1,14 @@
-import { React, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Container, Box } from '@mui/system';
+// import { contractAddr } from '../collection/data';
 
 import DropInfo from '../drop-info/DropInfo';
 import FundraiserInfo from '../fundraiser-info/FundraiserInfo';
 import NFTBadge from '../nft-badge/NFTBadge';
 import NFTModal from '../modal/modal';
 
-import { useQuery } from '@apollo/client';
-import query from '../../service/graphQuery';
+// import { useQuery } from '@apollo/client';
+// import query from '../../service/graphQuery';
 import * as utils from '../../service/utils';
 import { collection } from '../../collection/data';
 
@@ -18,7 +19,7 @@ const Drop = () => {
     setOpen(true);
     setUrl(url);
   };
-  // const { loading, error, data } = useQuery(query.fetchNFTInfo());
+  // const { loading, error, data } = useQuery(query.fetchNFTInfo(contractAddress=contractAddr));
   // // TODO: Perform correct error and loading handling
   // if (loading) return <div>Loading...</div>
   // if (error) {

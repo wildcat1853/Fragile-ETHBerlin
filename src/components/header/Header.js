@@ -7,45 +7,42 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { createTheme } from '@mui/material/styles';
+// import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 
 import logo from './fragile_earth.png';
-import { textTransform } from '@mui/system';
 import mainTheme from '../../themes/main';
 
 const pages = ['Leaderboard', 'Profile'];
 
-const headerLinksTheme = createTheme({
-  typography: {
-    fontFamily: ['"Helvetica Neue"'].join(','),
-    fontSize: '1rem'
-  }
-});
+// const headerLinksTheme = createTheme({
+//   typography: {
+//     fontFamily: ['"Helvetica Neue"'].join(','),
+//     fontSize: '1rem'
+//   }
+// });
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   return (
     <AppBar
@@ -63,11 +60,11 @@ const Header = () => {
             src={logo}
             width={'60px'}
             height={'60px'}
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              mr: 1,
-              filter: 'drop-shadow(0px 4px 10px rgba(231, 53, 96, 0.5))'
-            }}
+            // sx={{
+            //   display: { xs: 'none', md: 'flex' },
+            //   mr: 1,
+            //   filter: 'drop-shadow(0px 4px 10px rgba(231, 53, 96, 0.5))'
+            // }}
           ></img>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

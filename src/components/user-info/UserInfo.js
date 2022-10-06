@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Container, Box } from '@mui/system';
 
 import Avatar from '@mui/material/Avatar';

@@ -1,8 +1,5 @@
-import * as React from 'react';
-
 import { Box, ThemeProvider } from '@mui/system';
 import { Typography } from '@mui/material';
-import { createTheme } from '@mui/material';
 
 import mainTheme from '../../themes/main';
 import { styled } from '@mui/material/styles';
@@ -11,7 +8,7 @@ import LinearProgress, {
   linearProgressClasses
 } from '@mui/material/LinearProgress';
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+const BorderLinearProgress = styled(LinearProgress)(() => ({
   height: 20,
   borderRadius: 100,
   [`&.${linearProgressClasses.colorPrimary}`]: {
